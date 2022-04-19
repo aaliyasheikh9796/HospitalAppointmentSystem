@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aaliya Sheikh\\source\\New folder\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj": {}
+    "C:\\Users\\Aaliya Sheikh\\source\\repos\\com\\sebone\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aaliya Sheikh\\source\\New folder\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj": {
+    "C:\\Users\\Aaliya Sheikh\\source\\repos\\com\\sebone\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aaliya Sheikh\\source\\New folder\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Aaliya Sheikh\\source\\repos\\com\\sebone\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj",
         "projectName": "HospitalAppointmentSystem",
-        "projectPath": "C:\\Users\\Aaliya Sheikh\\source\\New folder\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj",
+        "projectPath": "C:\\Users\\Aaliya Sheikh\\source\\repos\\com\\sebone\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj",
         "packagesPath": "C:\\Users\\Aaliya Sheikh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aaliya Sheikh\\source\\New folder\\HospitalAppointmentSystem\\obj\\",
+        "outputPath": "C:\\Users\\Aaliya Sheikh\\source\\repos\\com\\sebone\\HospitalAppointmentSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Aaliya Sheikh\\AppData\\Roaming\\NuGet\\NuGet.Config",

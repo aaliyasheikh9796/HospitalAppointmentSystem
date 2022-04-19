@@ -11,6 +11,7 @@ namespace HospitalAppointmentSystem.Interfaces.Filter
     public interface IFilter
     {
         List<DoctorDetailsDO> searchDoctorByName(string doctorName);
-
+        List<DoctorDetailsDO> sortDoctorBySpecilization(string doctorSpecialization);
+       
     }
 }
