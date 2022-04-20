@@ -23,6 +23,7 @@ namespace HospitalAppointmentSystem
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

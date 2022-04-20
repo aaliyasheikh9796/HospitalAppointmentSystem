@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Aaliya Sheikh\\.nuget\\packages\\": {}
+    "C:\\Users\\Vivek Sharma\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aaliya Sheikh\\source\\repos\\com\\sebone\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj",
+      "projectUniqueName": "C:\\Users\\Vivek Sharma\\source\\repos\\New folder\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj",
       "projectName": "HospitalAppointmentSystem",
-      "projectPath": "C:\\Users\\Aaliya Sheikh\\source\\repos\\com\\sebone\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj",
-      "packagesPath": "C:\\Users\\Aaliya Sheikh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aaliya Sheikh\\source\\repos\\com\\sebone\\HospitalAppointmentSystem\\obj\\",
+      "projectPath": "C:\\Users\\Vivek Sharma\\source\\repos\\New folder\\HospitalAppointmentSystem\\HospitalAppointmentSystem.csproj",
+      "packagesPath": "C:\\Users\\Vivek Sharma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vivek Sharma\\source\\repos\\New folder\\HospitalAppointmentSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Aaliya Sheikh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vivek Sharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
