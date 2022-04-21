@@ -23,28 +23,56 @@ namespace HospitalAppointmentSystem
     /// </summary>
     public partial class HomePage : Window
     {
-        public List<DoctorDetailsDO> DoctorDetail { get; set; }
-        UserImpl UserImpl = new UserImpl();
-        DoctorMockData doctorMockData = new DoctorMockData();
+       List<DoctorDetailsDO> doctorDetail;
+        List<AvailbleSpecilization> homePageDetail;
         public HomePage()
         {
             InitializeComponent();
+            DoctorMockData doctorMockData = new DoctorMockData();
+           
+            List<DoctorDetailsDO> doctorDetailsList = doctorMockData.getDoctarDataList();
+            doctorDetail = new List<DoctorDetailsDO>();
 
-           
-            List<DoctorDetailsDO> doctorDetailsList = doctorMockData.getDoctarDataList();  
-            DoctorDetail = new List<DoctorDetailsDO>();
-            
-            foreach(DoctorDetailsDO item in doctorDetailsList)
+            foreach (DoctorDetailsDO item in doctorDetailsList)
             {
-                DoctorDetail.Add(item);
+                doctorDetail.Add(item);
             }
-           DataContext = this;
-           
+            MyList.ItemsSource = doctorDetail;
+
+            FilterImpl filterImpl = new FilterImpl();
+            List<AvailbleSpecilization> list = filterImpl.showaAilableSpecialist(doctorDetailsList);
+            homePageDetail = new List<AvailbleSpecilization>();
+            foreach (AvailbleSpecilization item in list)
+            {
+                homePageDetail.Add(item);
+            }
+            Speciallist.ItemsSource = homePageDetail;
+
+            MyList.Items.Filter = NameFilter;
+        }
+
+        private bool NameFilter(object obj)
+        {
+           var FilterObject = obj as DoctorDetailsDO;
+
+            return FilterObject.DoctorName.Contains(searchbar.Text , StringComparison.OrdinalIgnoreCase);
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+          
+        }
 
+        private void searchbar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (searchbar.Text == null)
+            {
+                MyList.Items.Filter = null;
+            }
+            else
+            {
+                MyList.Items.Filter = NameFilter;
+            }
         }
     }
 }

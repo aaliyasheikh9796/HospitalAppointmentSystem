@@ -12,6 +12,7 @@ namespace HospitalAppointmentSystem.DataObject
         public string DoctorName { get; set; }
         public string Degree { get; set; }
         public string Specilization { get; set; }
+        
         public DoctorDetailsDO()
         {
 
