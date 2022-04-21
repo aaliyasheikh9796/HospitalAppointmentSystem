@@ -39,7 +39,7 @@
 
         <Label x:Name="name" Content="UserName" HorizontalAlignment="Left" Margin="543,15,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" Foreground="White" FontSize="16" RenderTransformOrigin="-0.073,0.772" FontFamily="Bahnschrift Light" Grid.Row="0" Grid.Column="1"/>
 
-        <ListView x:Name ="MyList" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding doctorDetail}" Background="Transparent" Height="384" FontFamily="Bahnschrift Light" Foreground="#FF05445E" SelectionChanged="ListView_SelectionChanged" FontSize="16" VerticalAlignment="Top" BorderBrush="White" Grid.RowSpan="2" >
+        <ListView x:Name ="MyList" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding doctorDetail}" Background="Transparent" Height="372" FontFamily="Bahnschrift Light" Foreground="#FF05445E" SelectionChanged="ListView_SelectionChanged" FontSize="16" VerticalAlignment="Top" BorderBrush="White" Grid.RowSpan="2" >
             <ListView.View>
 
                 <GridView>
@@ -61,14 +61,25 @@
             </ListView.View>
         </ListView >
 
-        <ListView x:Name="Speciallist" Grid.Row="1" Grid.Column="0" Background="Transparent" ItemsSource="{Binding homePageDetail}"  FontFamily="Bahnschrift Light" FontSize="16">
+        <!--<ListView x:Name="Speciallist" Grid.Row="1" Grid.Column="0" Background="Transparent" ItemsSource="{Binding homePageDetail}"  FontFamily="Bahnschrift Light" FontSize="16">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Specialization" DisplayMemberBinding="{Binding Availble}" Width="120"/>
                 </GridView>
 
             </ListView.View>
-        </ListView>
+        </ListView>-->
+        <ListBox x:Name="Speciallist" ItemsSource="{Binding homePageDetail}" Grid.Row="1" Grid.Column="0" Background="Transparent" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                        <CheckBox x:Name="Chekhbox" Content="{Binding Availble}" FontFamily="Bahnschrift Light" FontSize="16" IsChecked="False" IsThreeState="False"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                
+            </ListBox>
+        
 
 
 
