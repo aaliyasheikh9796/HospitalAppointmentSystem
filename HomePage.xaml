@@ -9,37 +9,36 @@
 
     <Grid Background="#D4F1F4">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50">
+            <RowDefinition Height="50" >
 
             </RowDefinition>
             <RowDefinition Height="*"/>
             
 
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="650"/>
         </Grid.ColumnDefinitions>
-        <Rectangle HorizontalAlignment="Left" Height="50" Stroke="#189AB4" VerticalAlignment="Center" Width="800" Grid.ColumnSpan="2" >
+        <Rectangle Height="50" Stroke="#189AB4" Grid.ColumnSpan="2">
             <Rectangle.Fill>
                 <SolidColorBrush Color="#189AB4"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label Content="HospitalAppointment" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Center" FontFamily="Bahnschrift Light" FontSize="18" Foreground="White" Grid.ColumnSpan="2"/>
+        <Label Content="HospitalAppointment" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Center" FontFamily="Bahnschrift Light" FontSize="18" Foreground="White" Grid.ColumnSpan="2" ContextMenuClosing="Label_ContextMenuClosing"/>
         <Image x:Name="Image" HorizontalAlignment="Left" Height="45" Margin="8,0,0,0" VerticalAlignment="Top" Width="57" Source="C:\Users\Vivek Sharma\Downloads\plusImage.png" Grid.Row="0"/>
        
-        <Border x:Name="FilterBox" CornerRadius="10" Background="Transparent" Margin="173,0,0,0" Width="200" Height="25" VerticalAlignment="Center"  HorizontalAlignment="Left"  BorderBrush="White" BorderThickness="1" Grid.Column="1">
-            <TextBox x:Name="searchbar"  TextWrapping="Wrap" Margin="3"  FontFamily="Bahnschrift Light" FontSize="15" AutomationProperties.Name="SearchBar"  AutomationProperties.HelpText="search"  Background="Transparent" BorderBrush="Transparent" BorderThickness="0" TextChanged="searchbar_TextChanged"/>
-
+        <Border x:Name="FilterBox" CornerRadius="10" Background="Transparent" Margin="173,0,0,0" Width="200" Height="25" VerticalAlignment="Center"   BorderBrush="White" BorderThickness="1" Grid.ColumnSpan="2">
+            <TextBox x:Name="searchbar"  TextWrapping="Wrap" Margin="3"  FontFamily="Bahnschrift Light" FontSize="15" AutomationProperties.Name="SearchBar"  AutomationProperties.HelpText="search"  Background="Transparent" BorderBrush="Transparent" BorderThickness="0" TextChanged="searchbar_TextChanged" Grid.ColumnSpan="2"/>
         </Border>
-        <Border Grid.Column="1" VerticalAlignment="Top" Margin="409,17,181,0" CornerRadius="5" Height="20" Width="60" BorderBrush="White" Background="#FFFDFDFD" BorderThickness="1">
-            <Button x:Name="search" Content="Search" Margin="8,0,8,0" Background="White" BorderBrush="Transparent" VerticalAlignment="Center" FontFamily="Bahnschrift Light"/>
+        <Border  CornerRadius="5" Height="20" Width="60" BorderBrush="White" Background="#FFFDFDFD" BorderThickness="1" Grid.ColumnSpan="2" Grid.Column="1" Margin="50,0,0,0" >
+            <Button x:Name="search" Content="Search"  Background="White" BorderBrush="Transparent" FontFamily="Bahnschrift Light" Click="search_Click" Grid.ColumnSpan="2"/>
         </Border>
 
 
-        <Label x:Name="name" Content="UserName" HorizontalAlignment="Left" Margin="543,15,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" Foreground="White" FontSize="16" RenderTransformOrigin="-0.073,0.772" FontFamily="Bahnschrift Light" Grid.Row="0" Grid.Column="1"/>
-
-        <ListView x:Name ="MyList" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding doctorDetail}" Background="Transparent" Height="372" FontFamily="Bahnschrift Light" Foreground="#FF05445E" SelectionChanged="ListView_SelectionChanged" FontSize="16" VerticalAlignment="Top" BorderBrush="White" Grid.RowSpan="2" >
+        <Label x:Name="uname" Content="{Binding username}" Foreground="White" FontSize="16" RenderTransformOrigin="-0.073,0.772" FontFamily="Bahnschrift Light"  Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Label Name="hi" Content="Hii " Grid.Row="1" FontSize="15"/>
+        <!--<ListView x:Name ="MyList" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding doctorDetail}" Background="Transparent" Height="372" FontFamily="Bahnschrift Light" Foreground="#FF05445E" SelectionChanged="ListView_SelectionChanged" FontSize="16" VerticalAlignment="Top" BorderBrush="White" Grid.RowSpan="2" >
             <ListView.View>
 
                 <GridView>
@@ -47,11 +46,12 @@
                     <GridViewColumn DisplayMemberBinding="{Binding DoctorName}" Header="Name" Width="120"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Degree}" Header="Degree" Width="120"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Specilization}" Header="Specilization" Width="120"/>
-                    <GridViewColumn Header="Availble" Width="120">
+                    
+                        <GridViewColumn Header="Availble" Width="120">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Border  CornerRadius="5" Height="20" Width="60" BorderBrush="White" Background="Transparent" BorderThickness="1">
-                                    <Button x:Name="book" Content="Book" Margin="8,0,8,0" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" FontFamily="Bahnschrift Light" FontSize="12" Foreground="black"/>
+                                    <Button x:Name="book" Content="Book" Margin="8,0,8,0" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" FontFamily="Bahnschrift Light" FontSize="12" Foreground="black" Click="select_click"/>
                                 </Border>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -59,7 +59,7 @@
                 </GridView>
 
             </ListView.View>
-        </ListView >
+        </ListView >-->
 
         <!--<ListView x:Name="Speciallist" Grid.Row="1" Grid.Column="0" Background="Transparent" ItemsSource="{Binding homePageDetail}"  FontFamily="Bahnschrift Light" FontSize="16">
             <ListView.View>
@@ -69,11 +69,37 @@
 
             </ListView.View>
         </ListView>-->
-        <ListBox x:Name="Speciallist" ItemsSource="{Binding homePageDetail}" Grid.Row="1" Grid.Column="0" Background="Transparent" >
+
+        <ListView x:Name ="MyList" ItemsSource="{Binding doctorDetail}" Grid.Column="1" Grid.Row="1" Background="Transparent"  SelectionChanged="ListView_SelectionChanged"  FontFamily="Bahnschrift Light" Foreground="#FF05445E" FontSize="18" VerticalAlignment="Top" BorderBrush="White" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="docId" Grid.Column ="0" Content="{Binding DoctorId}" />
+                        <!--<TextBlock Grid.Column="0" Text="{Binding DoctorId}"/>-->
+                        <TextBlock x:Name ="DocName" Grid.Column="1" Text="{Binding DoctorName}" />
+                        <TextBlock Grid.Column="2" Text="{Binding Degree}"/>
+                        <TextBlock Grid.Column="3" Text="{Binding Specilization}"/>
+                        <Border Grid.Column="4"  CornerRadius="5" Height="20" Width="60" BorderBrush="Black" Background="Transparent" BorderThickness="1">
+                            <Button x:Name="book" Content="Book" Margin="8,0,8,0" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Center" FontFamily="Bahnschrift Light" FontSize="12" Foreground="#FF05445E" Click="select_click" CommandParameter="{Binding}"/>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListBox x:Name="Speciallist" ItemsSource="{Binding homePageDetail}" Grid.Row="1" Grid.Column="0" Background="Transparent" Foreground="#FF05445E">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <WrapPanel>
-                        <CheckBox x:Name="Chekhbox" Content="{Binding Availble}" FontFamily="Bahnschrift Light" FontSize="16" IsChecked="False" IsThreeState="False"/>
+                        <CheckBox  Content="{Binding Availble}" FontFamily="Bahnschrift Light" FontSize="18" IsChecked="False" IsThreeState="False" Foreground="#FF05445E" Height="30"/>
                         </WrapPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

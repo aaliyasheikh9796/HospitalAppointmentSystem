@@ -23,7 +23,7 @@ namespace HospitalAppointmentSystem
     /// </summary>
     public partial class HomePage : Window
     {
-       List<DoctorDetailsDO> doctorDetail;
+        List<DoctorDetailsDO> doctorDetail;
         List<AvailbleSpecilization> homePageDetail;
         public HomePage()
         {
@@ -31,6 +31,7 @@ namespace HospitalAppointmentSystem
             DoctorMockData doctorMockData = new DoctorMockData();
            
             List<DoctorDetailsDO> doctorDetailsList = doctorMockData.getDoctarDataList();
+
             doctorDetail = new List<DoctorDetailsDO>();
 
             foreach (DoctorDetailsDO item in doctorDetailsList)
@@ -49,6 +50,11 @@ namespace HospitalAppointmentSystem
             Speciallist.ItemsSource = homePageDetail;
 
             MyList.Items.Filter = NameFilter;
+
+            string username = "Vivek_Sharma";
+            uname.Content = username;
+            
+             
         }
 
         private bool NameFilter(object obj)
@@ -73,6 +79,35 @@ namespace HospitalAppointmentSystem
             {
                 MyList.Items.Filter = NameFilter;
             }
+        }
+
+        private void select_click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            DoctorDetailsDO doctorDetailsDO = b.CommandParameter as DoctorDetailsDO;          
+            Appointment form = new Appointment(doctorDetailsDO.DoctorName);
+            form.Show();
+            
+        }
+
+        private void search_Click(object sender, RoutedEventArgs e)
+        {
+            string docname = uname.Content as string;
+
+            //var senderBtn = sender as GridViewColumn;
+
+            Appointment form = new Appointment(docname);
+           
+            form.Show();
+        }
+
+        private void data_change(object sender ,RoutedEventArgs e)
+        {
+            
+        }
+        private void Label_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+            
         }
     }
 }
